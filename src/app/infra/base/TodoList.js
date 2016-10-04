@@ -22,8 +22,9 @@ export default class TodoList extends React.Component {
         {JSON.stringify(this.Store.collections)}
         <hr />
         <br />
+        IntoColl: <input className="create" ref="collName"  />
         Create new: <input className="create" ref="createItem"  />
-      <button onClick={(e) => {this.Store.collections[0].create(this.refs.createItem.value); this.refs.createItem.value = "";}}>Create</button><br /><br />
+      <button onClick={(e) => {this.Store.collections[this.refs.collName.value].create(this.refs.createItem.value); this.refs.createItem.value = "";}}>Create</button><br /><br />
       </div>);
 
   }

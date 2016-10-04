@@ -20,6 +20,13 @@ class Collection {
 
 }
 
+class PlainObj {
+
+  constructor(key, value) {
+    this[key]=value;
+  }
+}
+
 class BaseStore {
   @observable collections = [];
   @observable filter = "";
@@ -31,9 +38,10 @@ class BaseStore {
 
   create(collectionName) {
     let tempColl = new Collection(collectionName)
-    let obj = {};
-    let tempObj = obj[collectionName] = tempColl;
-    this.collections.push(tempObj);
+    // let obj = new PlainObj(collectionName, tempColl);
+    // this.collections[collectionName] = tempColl;
+    this.collections.push(tempColl);
+    console.log(this.collections);
   }
 
   delete(todo) {
