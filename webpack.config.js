@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  devtool: 'eval',
+  devtool: 'source-maps',
   entry: [
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:8088',
@@ -12,28 +12,28 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: '/static/assets/js'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
+  resolve: {
+    extensions: [ '.js', '.jsx']
+  },
 
   devServer: {
     colors: true,
     historyApiFallback: true,
     inline: false,
     port: 8088,
-    hot: true
+    hot: true,
+    contentBase: './static/'
   },
 
   module: {
     loaders: [{
-      test: /\.js$/,
+      test: /\.jsx?$/,
       loader: 'babel',
-      query: {
-        "presets": ["es2015", "stage-0", "react"],
-        "plugins": ["react-hot-loader/babel"]
-      },
       include: path.join(__dirname, 'src')
     }]
   }
