@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  devtool: 'source-maps',
+  devtool: 'source-map',
   entry: [
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:8088',

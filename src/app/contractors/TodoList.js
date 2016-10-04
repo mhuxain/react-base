@@ -20,6 +20,7 @@ export default class TodoList extends React.Component {
         <li key={todo.id}>{todo.id} - {todo.value}
           <input type="checkbox" value={todo.complete} onChange={this.toggleComplete.bind(this, todo) } checked={todo.complete} />
           <input type="button" onClick={() => this.Todos.delete(todo) } value="X" />
+          
         </li>
       )
     );
