@@ -1,0 +1,39 @@
+{
+  "name": "react-base",
+  "version": "0.1.0",
+  "description": "base for react apps",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --progress",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhuxain/react-base.git"
+  },
+  "keywords": [
+    "react",
+    "base"
+  ],
+  "author": "huxain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mhuxain/react-base/issues"
+  },
+  "homepage": "https://github.com/mhuxain/react-base#readme",
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-1": "^6.16.0",
+    "react-hot-loader": "^3.0.0-beta.5",
+    "webpack": "^2.1.0-beta.25",
+    "webpack-dev-server": "^2.1.0-beta.8"
+  }
+}
