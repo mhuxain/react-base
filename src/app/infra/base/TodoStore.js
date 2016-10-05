@@ -38,8 +38,6 @@ class BaseStore {
 
   create(collectionName) {
     let tempColl = new Collection(collectionName)
-    // let obj = new PlainObj(collectionName, tempColl);
-    // this.collections[collectionName] = tempColl;
     this.collections.push(tempColl);
     console.log(this.collections);
   }
