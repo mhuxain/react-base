@@ -8,13 +8,35 @@ import Collections from './infra/base/index.jsx'
 import Home from './Home'
 import NotFound from './NotFound'
 
+import { Link as MLink, Navigation} from 'react-toolbox';
+// import Link as MLink from 'react-toolbox/lib/link';
+
+const actions = [
+  { label: 'Alarm', raised: true, icon: 'access_alarm'},
+  { label: 'Location', raised: true, accent: true, icon: 'room'}
+];
+
+const NavigationTest = () => (
+  <div>
+    <Navigation type='horizontal' actions={actions} />
+    <Navigation type='vertical'>
+      <MLink href='http://' label='Inbox' icon='inbox' />
+      <MLink href='http://' active label='Profile' icon='person' />
+    </Navigation>
+  </div>
+);
+
+
 export default class App extends React.Component {
+
+
 
   render() {
 
     return (
       <Router>
         <div>
+          <NavigationTest />
           <ul>
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/contracts'>Contracts</Link></li>

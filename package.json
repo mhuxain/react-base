@@ -22,11 +22,17 @@
   },
   "homepage": "https://github.com/mhuxain/react-base#readme",
   "dependencies": {
+    "css-loader": "^0.25.0",
+    "immutability-helper": "^2.0.0",
     "mobx": "^2.5.2",
     "mobx-react": "^3.5.7",
+    "node-sass": "^3.10.1",
     "react": "^15.3.2",
+    "react-addons-css-transition-group": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-router": "^4.0.0-alpha.4"
+    "react-router": "^4.0.0-alpha.4",
+    "react-toolbox": "^1.2.2",
+    "sass-loader": "^4.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
