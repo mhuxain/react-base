@@ -19,9 +19,8 @@ class TodoStore {
   @observable filter = "";
 
   @computed get filteredTodos() {
-    console.log("test");
     var matchesFilter = new RegExp(this.filter, "i", ) // "i" means do a case insensitive filter
-    return this.todos.filter(todo => !this.filter || matchesFilter.test(todo))
+    return this.todos.filter(todo => !this.filter || matchesFilter.test(todo.value))
   }
 
   clearComplete = () => {

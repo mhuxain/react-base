@@ -41,7 +41,6 @@ class BaseStore {
     // let obj = new PlainObj(collectionName, tempColl);
     // this.collections[collectionName] = tempColl;
     this.collections.push(tempColl);
-    console.log(this.collections);
   }
 
   delete(todo) {
