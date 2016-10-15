@@ -45,7 +45,10 @@ module.exports = {
         loader: ExtractTextPlugin.extract({
             fallbackLoader: "style-loader",
             loader: [
-              { loader: 'css-loader', query: {sourceMap: true} },
+              { loader: 'css-loader', query: {
+                    sourceMap: true
+                  } 
+              },
               { loader: 'postcss-loader' },
               {
                 loader: 'sass-loader',

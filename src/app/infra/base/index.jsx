@@ -7,6 +7,6 @@ export default class Container extends React.Component {
 
   render() {
 
-    return (<TodoList store={Store} />);
+    return (<TodoList store={new Store} />);
   }
 }

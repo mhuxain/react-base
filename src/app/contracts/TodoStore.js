@@ -1,41 +1,16 @@
-import { computed, observable } from "mobx";
+import { computed, observable, action } from "mobx";
+import TodoStore from "../infra/base/TodoStore";
 
-class Todo {
-  @observable value;
-  @observable id;
-  @observable complete
+class Contracts extends TodoStore {
 
-  constructor(value, newId) {
-    this.value = value;
-    this.id = newId;
-    this.complete = false;
-  }
-
-
+  
+    constructor() {
+        
+        super();
+        this.resRoute = "/contracts.json";
+        this.init();
+    }
+    
 }
 
-class TodoStore {
-  @observable todos = [];
-  @observable filter = "";
-
-  @computed get filteredTodos() {
-    var matchesFilter = new RegExp(this.filter, "i", ) // "i" means do a case insensitive filter
-    return this.todos.filter(todo => !this.filter || matchesFilter.test(todo))
-  }
-
-  clearComplete = () => {
-    const incompleteTodos = this.todos.filter(todo => !todo.complete)
-    this.todos.replace(incompleteTodos)
-  }
-
-  create(value) {
-    let newId = this.todos.length + 1;
-    this.todos.push(new Todo(value, newId));
-  }
-
-  delete(todo) {
-    this.todos.remove(todo)
-  }
-}
-
-export default new TodoStore;
+export default Contracts;
