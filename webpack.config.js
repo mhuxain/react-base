@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   devtool: 'source-map',
@@ -15,7 +16,8 @@ module.exports = {
     publicPath: '/static/assets/js'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new ExtractTextPlugin('style.css')
   ],
   resolve: {
     extensions: [ '.js', '.jsx']
@@ -32,10 +34,34 @@ module.exports = {
   },
 
   module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      loader: 'babel',
-      include: path.join(__dirname, 'src')
-    }]
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        loader: 'babel',
+        include: path.join(__dirname, 'src')
+      },
+      {
+          
+        test: /(\.scss|\.css)$/,
+        loader: ExtractTextPlugin.extract({
+            fallbackLoader: "style-loader",
+            loader: [
+              { loader: 'css-loader', query: {
+                    sourceMap: true
+                  } 
+              },
+              { loader: 'postcss-loader' },
+              {
+                loader: 'sass-loader',
+                options: {
+                  data: '@import "theme/_config.scss";',
+                  includePaths: [path.resolve(__dirname, './src/app')]
+                }
+
+              }
+            ]
+          })
+      }
+    ]
   }
 };

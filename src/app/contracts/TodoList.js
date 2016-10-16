@@ -19,7 +19,7 @@ export default class TodoList extends React.Component {
     let contractors = this.props.contractors;
     const todoList = filteredTodos.map(
       (todo, i) => (
-        <li key={todo.id}>{todo.id} - {todo.value} - {this.props.contractors.todos[todo.id -1 ].value} Blah
+        <li key={todo.id}>{todo.id} - {todo.value}
           <input type="checkbox" value={todo.complete} onChange={this.toggleComplete.bind(this, todo) } checked={todo.complete} />
           <input type="button" onClick={() => this.Todos.delete(todo) } value="X" />
         </li>

@@ -30,7 +30,7 @@ export default class TodoList extends React.Component {
         <h1>Contractors</h1>
         <b>{filter}</b><br></br>
         Create new: <input className="create" ref="createNewInput"  />
-      <button onClick={(e) => {this.Todos.create(this.refs.createNewInput.value); this.refs.createNewInput.value = "";}}>Create</button><br /><br />
+        <button onClick={(e) => {this.Todos.create(this.refs.createNewInput.value); this.refs.createNewInput.value = "";}}>Create</button><br /><br />
         Search: <input className="filter" value={filter} onChange={(e) => this.filter(e)} /> <br />
         <ul>
             {todoList}
